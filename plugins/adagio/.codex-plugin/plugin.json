@@ -1,0 +1,44 @@
+{
+  "name": "adagio",
+  "version": "0.1.0",
+  "description": "Build, inspect, validate, and safely edit Adagio pipelines.",
+  "author": {
+    "name": "Adagio",
+    "url": "https://adagio.run"
+  },
+  "homepage": "https://docs.adagiodata.com/integrations/adagio-ai",
+  "repository": "https://github.com/cymis/adagio-plugin",
+  "license": "MIT",
+  "keywords": [
+    "adagio",
+    "pipelines",
+    "scientific-workflows",
+    "rachis"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Adagio",
+    "shortDescription": "Build scientific pipelines",
+    "longDescription": "Use your Adagio account to inspect, create, validate, and safely update pipelines with exact action specifications and compatibility checks. Pipeline execution and local file access remain in Adagio Desktop.",
+    "developerName": "Adagio",
+    "category": "Productivity",
+    "capabilities": [
+      "Interactive",
+      "Write"
+    ],
+    "websiteURL": "https://adagio.run",
+    "privacyPolicyURL": "https://adagio.run/privacy",
+    "termsOfServiceURL": "https://adagio.run/terms",
+    "defaultPrompt": [
+      "Explain the pipeline I most recently edited in Adagio.",
+      "Build an Adagio pipeline and flag decisions I need to make.",
+      "Validate my Adagio pipeline and explain what is unresolved."
+    ],
+    "brandColor": "#2E5E6B",
+    "composerIcon": "./assets/adagio-mark.svg",
+    "logo": "./assets/adagio-logo.svg",
+    "logoDark": "./assets/adagio-logo-dark.svg",
+    "screenshots": []
+  },
+  "apps": "./.app.json"
+}

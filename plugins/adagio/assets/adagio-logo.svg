@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 96" role="img" aria-label="Adagio">
+  <defs>
+    <linearGradient id="mark-bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#245a6b"/>
+      <stop offset="1" stop-color="#1a414c"/>
+    </linearGradient>
+  </defs>
+  <rect width="360" height="96" rx="18" fill="#f5faf9"/>
+  <svg x="18" y="16" width="64" height="64" viewBox="0 0 1024 1024" aria-hidden="true">
+    <rect width="1024" height="1024" rx="228" ry="228" fill="url(#mark-bg)"/>
+    <g transform="translate(197.75, 212) scale(14.29)">
+      <g transform="translate(-72.117 -137.71)">
+        <path fill="none" stroke="#ffffff" stroke-linecap="round" stroke-linejoin="round" style="stroke-width: 5" d="m94.611 184.3a21.805 21.734 0 0 1 -18.206 -14.794 21.805 21.734 0 0 1 5.829 -22.681 21.805 21.734 0 0 1 23.1 -4.2471"/>
+        <path fill="#ffffff" d="m97.617 167.39c-0.57007-3.5795-1.0171-6.3864-2.6217-8.8468-1.6046-2.4604-3.7554-2.9466-4.9531-3.2643s-2.6336-0.80018-2.5922-1.5242c0.04136-0.72401 1.2743-1.7868 1.5848-2.3199 0.31045-0.53306-0.54822-0.5523-0.69349-0.698-0.14527-0.1457-0.01412-0.73903 0.26565-1.062 0.27976-0.32301 0.60706-0.37503 2.0262 0.0712s3.6142 1.272 5.5824 4.1374c1.9682 2.8653 2.1716 5.646 2.3237 8.0692 0.15211 2.4232 0.27202 4.9618 0.37783 7.2016l-0.96128-0.37232-0.33881-1.3918z"/>
+        <path fill="none" stroke="#ffffff" stroke-linecap="round" stroke-linejoin="round" style="stroke-width: 3.8187" d="m106.7 152.93c-0.33679-0.67358-0.67363-1.3472-2.0207-1.684-1.347-0.33675-3.7044-0.33675-4.5466 4.0417-0.84214 4.3784-0.16861 13.134-1.0105 17.513-0.84189 4.3785-3.1992 4.3785-4.5466 4.0416s-1.6841-1.0103-2.0209-1.6839"/>
+      </g>
+    </g>
+  </svg>
+  <text x="100" y="63" font-family="ui-sans-serif, system-ui, sans-serif" font-size="48" font-weight="650" fill="#173a43">Adagio</text>
+</svg>

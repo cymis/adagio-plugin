@@ -1,0 +1,20 @@
+{
+  "name": "adagio",
+  "interface": {
+    "displayName": "Adagio"
+  },
+  "plugins": [
+    {
+      "name": "adagio",
+      "source": {
+        "source": "local",
+        "path": "./plugins/adagio"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

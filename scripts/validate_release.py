@@ -130,6 +130,7 @@ def validate_mcp(plugin_root: Path) -> None:
                 "adagio": {
                     "type": "http",
                     "url": "https://mcp.adagio.run/mcp",
+                    "oauth_resource": "https://mcp.adagio.run",
                 }
             }
         },

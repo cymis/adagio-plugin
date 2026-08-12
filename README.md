@@ -1,25 +1,46 @@
-# Adagio for Codex
+# Adagio plugin
 
-This repository is the public source and GitHub marketplace for the Adagio plugin for Codex. It lets Codex inspect, build, validate, and safely update scientific pipelines in your Adagio account.
+This repository is the public source and GitHub marketplace for the Adagio plugin. The same client-neutral skills help ChatGPT, Codex, and Claude Code inspect, build, validate, and safely update scientific pipelines through Adagio's hosted MCP service.
 
-The GitHub distribution is a beta installation path while the same plugin completes review for OpenAI's public plugin directory. It is not an OpenAI-reviewed listing.
+The GitHub marketplace is an independent distribution path. It is published by Adagio, but installing it does not mean OpenAI or Anthropic has reviewed it. OpenAI's official listing is already in review; after approval and publication, it will appear in the universal Plugins Directory shared by ChatGPT and Codex. Anthropic accepts third-party submissions into its reviewed community marketplace; its separate official marketplace is curated at Anthropic's discretion.
 
-## Install
+| Surface | Distribution | Status |
+| --- | --- | --- |
+| ChatGPT and Codex | OpenAI Plugins Directory | In review; OpenAI distributes the reviewed skill snapshot |
+| Claude Code | Anthropic official marketplace | Curated by Anthropic; no public submission path is documented |
+| Claude Code | Anthropic community marketplace | Submission follows the tagged public release |
+| Codex | This GitHub marketplace | Release candidate; independent fallback |
+| Claude Code | This GitHub marketplace | Release candidate; independent fallback |
+| Claude and other MCP clients | Direct hosted MCP connection | Tools only; does not install the guided skills |
 
-You need an Adagio account and a current Codex installation with plugin marketplace support.
+The public bundle lives under [`plugins/adagio`](plugins/adagio). Edit the shared skills there once; do not maintain vendor-specific skill copies.
 
-Install the released, version-pinned marketplace and plugin:
+## Install a released GitHub build
+
+You need an Adagio account and a client with plugin marketplace support. The `v0.1.1` tag will be published only after cross-client release validation passes. Until that tag exists, these commands intentionally do not install a moving release candidate.
+
+### Claude Code
+
+```text
+/plugin marketplace add cymis/adagio-plugin@v0.1.1
+/plugin install adagio@adagio
+/reload-plugins
+```
+
+Starting a new Claude Code session also loads the installed plugin. Connect your Adagio account when the hosted service first requests authorization.
+
+### Codex
 
 ```bash
-codex plugin marketplace add cymis/adagio-plugin --ref v0.1.0
+codex plugin marketplace add cymis/adagio-plugin --ref v0.1.1
 codex plugin add adagio@adagio
 ```
 
-Restart Codex, begin a new task, and connect your Adagio account when prompted. Start with a read-only request such as:
+Restart Codex, begin a new task, and connect your Adagio account when prompted.
+
+For either client, start with a read-only request such as:
 
 > Show my Adagio pipelines.
-
-The `v0.1.0` tag will be published only after the external-account authorization test passes. Until that tag exists, this repository is a release candidate and the commands above intentionally do not install from a moving branch.
 
 ## Capabilities and boundaries
 
@@ -31,13 +52,19 @@ The plugin can:
 
 It cannot execute pipelines, read local files, inspect local run outputs, control Adagio Desktop, or access raw biological artifacts. Local execution remains in Adagio Desktop.
 
-The installed package contains only declarative skills, SVG assets, metadata, and a registered hosted app mapping. It does not install executable hooks, scripts, package dependencies, or a local server. Inspect the complete bundle under [`plugins/adagio`](plugins/adagio).
-
-See the [Adagio AI integration guide](https://docs.adagiodata.com/integrations/adagio-ai/) for requested permissions, data boundaries, revocation, and troubleshooting.
+The installed package contains declarative skills, SVG assets, metadata, a registered OpenAI app mapping, and a Claude Code MCP descriptor. It contains no credentials, executable hooks, package dependencies, or local server. See the [Adagio AI integration guide](https://docs.adagiodata.com/integrations/adagio-ai/) for permissions, data boundaries, revocation, and troubleshooting.
 
 ## Update
 
-Pinned marketplace releases do not move automatically. To move to a newer released tag, remove the installed beta and marketplace, then add the new tag and reinstall:
+For Claude Code, refresh the marketplace and plugin:
+
+```text
+/plugin marketplace update adagio
+/plugin update adagio@adagio
+/reload-plugins
+```
+
+For Codex, move a pinned installation to a newer release:
 
 ```bash
 codex plugin remove adagio@adagio
@@ -46,20 +73,13 @@ codex plugin marketplace add cymis/adagio-plugin --ref vX.Y.Z
 codex plugin add adagio@adagio
 ```
 
-Start a new task after reinstalling so Codex loads the updated skills and tools.
+Start a new task after reinstalling so the client loads the updated skills and tools.
 
-## Remove or migrate to the reviewed listing
+## Remove or migrate to an official listing
 
-Remove the GitHub beta with:
+Remove the GitHub plugin and its marketplace before installing the corresponding official listing. This avoids duplicate skills and tool connections. Removing a plugin does not revoke its Adagio authorization; revoke the connection under **Adagio → Profile → AI assistants**.
 
-```bash
-codex plugin remove adagio@adagio
-codex plugin marketplace remove adagio
-```
-
-Removing the plugin does not revoke its Adagio authorization. To revoke access, open **Adagio → Profile → AI assistants** and choose **Revoke access**.
-
-When the reviewed listing becomes available, remove this GitHub beta before installing the reviewed Adagio listing to avoid duplicate skills or tools. The official installation link will be published in the [integration guide](https://docs.adagiodata.com/integrations/adagio-ai/).
+Reviewed-directory installation links will be published in the [integration guide](https://docs.adagiodata.com/integrations/adagio-ai/) after each vendor approves and publishes its listing.
 
 ## Support and security
 

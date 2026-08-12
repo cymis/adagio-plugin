@@ -1,0 +1,19 @@
+{
+  "name": "adagio",
+  "owner": {
+    "name": "Adagio",
+    "url": "https://adagio.run"
+  },
+  "metadata": {
+    "description": "Official Adagio plugin: build, inspect, validate, and safely edit Adagio pipelines from Claude Code.",
+    "version": "0.1.1"
+  },
+  "plugins": [
+    {
+      "name": "adagio",
+      "source": "./plugins/adagio",
+      "description": "Build, inspect, validate, and safely edit Adagio pipelines.",
+      "category": "productivity"
+    }
+  ]
+}

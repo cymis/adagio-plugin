@@ -18,6 +18,7 @@ description: Validate an Adagio pipeline and collect unresolved scientific, data
 ## Guardrails
 
 - A missing runtime file is not necessarily an invalid graph. The hosted plugin cannot inspect or bind local files.
+- Use only Adagio MCP tools to read Adagio state. Never fall back to UI/browser/computer control, direct HTTP/API or database access, or implementation-source inspection. Report an MCP limitation instead.
 - Do not infer data properties from names, tutorial resemblance, or method popularity.
 - Do not invent actions, parameters, or compatibility results.
 - This workflow is read-only until the user explicitly asks to apply a reviewed repair.

@@ -17,6 +17,7 @@ description: Find installed Adagio actions that can consume a pipeline output us
 ## Guardrails
 
 - Never claim compatibility based on memory or similar spelling.
+- Use only Adagio MCP tools to establish Adagio catalog and compatibility facts. Never fall back to UI/browser/computer control, direct HTTP/API or database access, or implementation-source inspection. Report an MCP limitation instead.
 - Never silently substitute an available method for the requested method.
 - Do not install a community plugin without explicit consent through the protected flow.
 - This skill does not execute actions or inspect local data.

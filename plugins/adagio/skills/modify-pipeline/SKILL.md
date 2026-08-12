@@ -19,6 +19,7 @@ description: Safely modify an existing Adagio pipeline with exact catalog facts,
 ## Guardrails
 
 - Never invent catalog facts or fill a data-dependent value without evidence.
+- Use only Adagio MCP tools to read or change Adagio state. Never fall back to UI/browser/computer control, direct HTTP/API or database access, or implementation-source inspection. If a requested edit cannot be represented, leave the pipeline unchanged and report the exact gap.
 - Do not bypass community-plugin consent.
 - Do not claim the hosted plugin can execute pipelines or inspect local files.
-- Prefer a duplicate-before-edit or browser history path when the requested operation is broadly destructive.
+- Prefer duplicating the pipeline before a broadly destructive edit, or tell the user how Adagio history can recover it.

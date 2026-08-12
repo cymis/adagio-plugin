@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "adagio": {
+      "type": "http",
+      "url": "https://mcp.adagio.run/mcp"
+    }
+  }
+}

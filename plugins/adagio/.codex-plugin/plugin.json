@@ -40,5 +40,5 @@
     "logoDark": "./assets/adagio-logo-dark.svg",
     "screenshots": []
   },
-  "apps": "./.app.json"
+  "mcpServers": "./.mcp.json"
 }

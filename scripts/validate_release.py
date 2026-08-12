@@ -19,7 +19,6 @@ SEMVER = re.compile(
     r"(?:-[0-9A-Za-z-]+(?:\.[0-9A-Za-z-]+)*)?"
     r"(?:\+[0-9A-Za-z-]+(?:\.[0-9A-Za-z-]+)*)?$"
 )
-APP_ID = re.compile(r"^(?:plugin_)?asdk_app_[0-9A-Za-z]+$")
 ALLOWED_SUFFIXES = {".json", ".md", ".svg"}
 ALLOWED_EXTENSIONLESS_FILES = {"LICENSE"}
 
@@ -89,11 +88,11 @@ def validate_codex_manifest(plugin_root: Path) -> dict[str, Any]:
         "Codex manifest repository must point to the public plugin source",
     )
     require(manifest.get("skills") == "./skills/", "manifest skills path must be ./skills/")
-    require(manifest.get("apps") == "./.app.json", "manifest apps path must be ./.app.json")
-    require("mcpServers" not in manifest, "Codex manifest must use the registered app mapping")
+    require(manifest.get("mcpServers") == "./.mcp.json", "manifest MCP path must be ./.mcp.json")
+    require("apps" not in manifest, "GitHub fallback must not map the reviewed OpenAI app")
     require("hooks" not in manifest, "the public plugin must not contain hooks")
 
-    for field in ("skills", "apps"):
+    for field in ("skills", "mcpServers"):
         configured = manifest[field]
         target = (plugin_root / configured).resolve()
         require(target.is_relative_to(plugin_root.resolve()), f"{field} must remain inside plugin root")
@@ -120,15 +119,6 @@ def validate_claude_manifest(plugin_root: Path) -> dict[str, Any]:
         "Claude manifest repository must point to the public plugin source",
     )
     return manifest
-
-
-def validate_app(plugin_root: Path) -> None:
-    app = load_json(plugin_root / ".app.json")
-    apps = app.get("apps")
-    require(isinstance(apps, dict) and set(apps) == {"adagio"}, ".app.json must map only adagio")
-    identifier = apps["adagio"].get("id")
-    require(isinstance(identifier, str) and bool(APP_ID.fullmatch(identifier)), "invalid Adagio app ID")
-    require("replace" not in identifier.lower(), "app ID still contains a publication placeholder")
 
 
 def validate_mcp(plugin_root: Path) -> None:
@@ -198,7 +188,6 @@ def main() -> int:
             claude_marketplace.get("metadata", {}).get("version") == version,
             "Claude marketplace metadata version must match the plugin manifests",
         )
-        validate_app(plugin_root)
         validate_mcp(plugin_root)
         validate_skills(plugin_root)
         validate_package_files(plugin_root)

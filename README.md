@@ -6,10 +6,10 @@ The GitHub marketplace is an independent distribution path. It is published by A
 
 | Surface | Distribution | Status |
 | --- | --- | --- |
-| ChatGPT and Codex | OpenAI Plugins Directory | In review; OpenAI distributes the reviewed skill snapshot |
+| ChatGPT and Codex | OpenAI Plugins Directory | In review; OpenAI distributes the reviewed app and skill snapshot |
 | Claude Code | Anthropic official marketplace | Curated by Anthropic; no public submission path is documented |
 | Claude Code | Anthropic community marketplace | Submission follows the tagged public release |
-| Codex | This GitHub marketplace | Release candidate; independent fallback |
+| Codex | This GitHub marketplace | Release candidate; independent direct-MCP fallback |
 | Claude Code | This GitHub marketplace | Release candidate; independent fallback |
 | Claude and other MCP clients | Direct hosted MCP connection | Tools only; does not install the guided skills |
 
@@ -52,7 +52,7 @@ The plugin can:
 
 It cannot execute pipelines, read local files, inspect local run outputs, control Adagio Desktop, or access raw biological artifacts. Local execution remains in Adagio Desktop.
 
-The installed package contains declarative skills, SVG assets, metadata, a registered OpenAI app mapping, and a Claude Code MCP descriptor. It contains no credentials, executable hooks, package dependencies, or local server. See the [Adagio AI integration guide](https://docs.adagiodata.com/integrations/adagio-ai/) for permissions, data boundaries, revocation, and troubleshooting.
+The installed package contains declarative skills, SVG assets, metadata, and one direct hosted MCP descriptor shared by Codex and Claude Code. It does not contain or install the registered OpenAI app mapping used by the separately reviewed official listing, and it contains no credentials, executable hooks, package dependencies, or local server. See the [Adagio AI integration guide](https://docs.adagiodata.com/integrations/adagio-ai/) for permissions, data boundaries, revocation, and troubleshooting.
 
 ## Update
 

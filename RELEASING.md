@@ -6,14 +6,14 @@ OpenAI's current submission is already in review and remains frozen in that proc
 
 ## Release checklist
 
-1. Make skill and manifest changes under `plugins/adagio` in this repository.
+1. Make skill and manifest changes under `plugins/adagio` in this repository. Keep this GitHub distribution on the direct hosted MCP descriptor; do not add the separately reviewed OpenAI app mapping.
 2. Keep the Codex and Claude manifests on the same version and keep both repository URLs set to `https://github.com/cymis/adagio-plugin`.
 3. Keep `.agents/plugins/marketplace.json` and `.claude-plugin/marketplace.json` pointed at the same `plugins/adagio` directory.
 4. Run `python3 scripts/validate_release.py`.
 5. Run the OpenAI plugin-creator validator against `plugins/adagio` and `claude plugin validate .` from the repository root.
 6. Run each skill through the skill-creator validator.
 7. Confirm the hosted readiness endpoint, OAuth protected-resource metadata, integration guide, privacy policy, and terms are available over HTTPS.
-8. Install the exact candidate commit from accounts outside the development workspaces on Codex and Claude Code. Verify skill loading, authorization, a read-only request, cross-user denial, revocation, and configured write policy.
+8. Install the exact candidate commit from accounts outside the development workspaces on Codex and Claude Code. Confirm each client loads the direct hosted MCP server rather than an official app mapping, then verify skill loading, authorization, a read-only request, cross-user denial, revocation, and configured write policy.
 9. Exercise the maintained positive and negative reviewer cases against the frozen hosted build.
 10. Merge through `dev`, promote `dev` to `main`, and create a protected `v<manifest-version>` tag at the exact validated commit.
 11. Submit the tagged repository to Anthropic's community marketplace review, then track any separate official-marketplace outreach independently.

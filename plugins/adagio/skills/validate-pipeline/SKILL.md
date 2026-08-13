@@ -9,7 +9,7 @@ description: Validate an Adagio pipeline and collect unresolved scientific, data
 
 1. Call `get_adagio_context` first.
 2. Resolve the pipeline through `list_pipelines` when necessary, then call `get_pipeline`.
-3. Call `validate_pipeline` against the current graph. Fetch exact action specifications for errors involving inputs or parameters, and use `find_compatible_actions` for invalid connections.
+3. Use the `valid`, `problems`, `unresolvedParameters`, `pipelineInputs`, and `needsData` fields returned by `get_pipeline` as the validation state of the stored graph. `validate_pipeline` validates an unsaved proposal and does not accept a pipeline ID; use it only when the user asks you to assess a proposed graph before creation. Fetch exact action specifications for errors involving inputs or parameters, and use `find_compatible_actions` for invalid connections.
 4. Group findings into structural errors, missing runtime data, unset required parameters, and scientific decisions that require evidence.
 5. For every unresolved item, explain the exact evidence or user choice needed. Leave data-dependent thresholds, depths, reference choices, and similar values unset until that evidence exists.
 6. If the user asks for repairs, propose a concrete change set and switch to the safe modification workflow; do not mutate during validation alone.

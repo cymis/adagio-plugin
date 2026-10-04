@@ -9,7 +9,7 @@
   "homepage": "https://docs.adagiodata.com/integrations/adagio-ai",
   "repository": "https://github.com/cymis/adagio-plugin",
   "license": "MIT",
-  "icon": "./assets/adagio-mark.svg",
+  "icon": "./assets/adagio-icon.png",
   "privacyPolicyUrl": "https://adagio.run/privacy",
   "keywords": [
     "adagio",

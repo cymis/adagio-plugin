@@ -152,7 +152,7 @@ def validate_mcp(plugin_root: Path) -> None:
             "mcpServers": {
                 "adagio": {
                     "type": "http",
-                    "url": "https://mcp.adagio.run/mcp",
+                    "url": "https://mcp.adagio.run",
                     "oauth_resource": "https://mcp.adagio.run",
                 }
             }

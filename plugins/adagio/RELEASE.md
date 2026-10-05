@@ -1,10 +1,10 @@
 # Release metadata
 
-- Package version: 0.1.1
+- Package version: 0.1.2
 - Distribution: `cymis/adagio-plugin`, marketplace `adagio`
 - Pipeline specification: 1.0.0rc
 - Hosted MCP resource: `https://mcp.adagio.run`
-- MCP endpoint: `https://mcp.adagio.run/mcp`
+- MCP endpoint: `https://mcp.adagio.run`
 - Supported products: Codex and Claude Code through the repository marketplace; the separately reviewed OpenAI listing remains its own distribution track
 - Execution: not exposed in the first public release
 - Local files: never available to the hosted integration

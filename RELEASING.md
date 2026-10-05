@@ -48,8 +48,11 @@ concrete private fixture IDs to this repository.
 
 1. Add/connect the server in a fresh Claude account or browser session. Choose
    **Register automatically** if Claude asks how to identify its OAuth client.
-2. Sign in to Adagio with the supplied reviewer account. The account must already
-   be provisioned, confirmed, and populated with the named sample pipelines.
+2. For the existing isolated reviewer account, choose **Continue with
+   AdagioOpenAIReviewer** on Adagio's sign-in page, then enter the supplied
+   credentials on the reviewer sign-in page. Its password does not work in the
+   ordinary Adagio email/password form. The account must already be provisioned,
+   confirmed, and populated with the named sample pipelines.
    Document any required second factor or invitation steps so the reviewer can
    complete them without access to the maintainer's inbox or device.
 3. Ask: "Show my Adagio pipelines." Then ask Claude to inspect and validate the

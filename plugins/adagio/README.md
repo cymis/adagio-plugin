@@ -21,5 +21,5 @@ Start with "Show my Adagio pipelines," then ask to explain or validate one.
 The plugin can create and edit pipeline definitions after the applicable
 approvals. Execution and access to local files remain in Adagio Desktop.
 
-To revoke authorization, open **Adagio → Profile → AI assistants** and revoke
+To revoke authorization, open **Adagio → Settings → AI → AI assistants** and revoke
 the corresponding assistant. Removing the plugin alone does not revoke access.

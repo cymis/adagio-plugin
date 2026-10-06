@@ -76,7 +76,7 @@ Start a new task after reinstalling so the client loads the updated skills and t
 
 ## Remove or migrate to an official listing
 
-Remove the GitHub plugin and its marketplace before installing the corresponding official listing. This avoids duplicate skills and tool connections. Removing a plugin does not revoke its Adagio authorization; revoke the connection under **Adagio → Profile → AI assistants**.
+Remove the GitHub plugin and its marketplace before installing the corresponding official listing. This avoids duplicate skills and tool connections. Removing a plugin does not revoke its Adagio authorization; revoke the connection under **Adagio → Settings → AI → AI assistants**.
 
 Reviewed-directory installation links will be published in the [integration guide](https://docs.adagiodata.com/integrations/adagio-ai/) after each vendor approves and publishes its listing.
 

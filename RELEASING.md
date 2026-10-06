@@ -66,7 +66,7 @@ concrete private fixture IDs to this repository.
    client-specific steps for Claude.
 6. Verify a real token refresh after sign-in, including the configured refresh
    token rotation. Disconnect/reconnect, then verify that revoking **Claude** in
-   **Adagio → Profile → AI assistants** requires a fresh authorization.
+   **Adagio → Settings → AI → AI assistants** requires a fresh authorization.
 
 Do not attest that these checks passed until they have run against the deployed
 candidate using the supplied account. A successful package scan or an existing

@@ -19,7 +19,9 @@ SEMVER = re.compile(
     r"(?:-[0-9A-Za-z-]+(?:\.[0-9A-Za-z-]+)*)?"
     r"(?:\+[0-9A-Za-z-]+(?:\.[0-9A-Za-z-]+)*)?$"
 )
-ALLOWED_SUFFIXES = {".json", ".md", ".svg"}
+ALLOWED_SUFFIXES = {".json", ".md", ".png", ".svg"}
+BINARY_SUFFIXES = {".png"}
+PNG_SIGNATURE = b"\x89PNG\r\n\x1a\n"
 ALLOWED_EXTENSIONLESS_FILES = {"LICENSE"}
 
 
@@ -118,7 +120,28 @@ def validate_claude_manifest(plugin_root: Path) -> dict[str, Any]:
         manifest.get("repository") == "https://github.com/cymis/adagio-plugin",
         "Claude manifest repository must point to the public plugin source",
     )
+    validate_directory_icon(plugin_root, manifest)
+    require(
+        str(manifest.get("privacyPolicyUrl", "")).startswith("https://"),
+        "Claude manifest privacyPolicyUrl must be an https URL for the directory listing",
+    )
     return manifest
+
+
+def validate_directory_icon(plugin_root: Path, manifest: dict[str, Any]) -> None:
+    configured = manifest.get("icon")
+    require(isinstance(configured, str), "Claude manifest icon is required for the directory listing")
+    target = (plugin_root / configured).resolve()
+    require(target.is_relative_to(plugin_root.resolve()), "Claude manifest icon escapes plugin root")
+    require(target.suffix == ".png", "directory icon must be a PNG; the directory rejects SVG and WebP")
+    require(target.is_file(), f"Claude manifest icon does not exist: {configured}")
+    require(target.stat().st_size < 2 * 1024 * 1024, "directory icon must be under 2 MB")
+    header = target.read_bytes()[:24]
+    require(header.startswith(PNG_SIGNATURE), "directory icon is not a valid PNG")
+    width = int.from_bytes(header[16:20], "big")
+    height = int.from_bytes(header[20:24], "big")
+    require(width == height, f"directory icon must be square, got {width}x{height}")
+    require(512 <= width <= 2048, f"directory icon must be 512-2048 px per side, got {width}")
 
 
 def validate_mcp(plugin_root: Path) -> None:
@@ -129,7 +152,7 @@ def validate_mcp(plugin_root: Path) -> None:
             "mcpServers": {
                 "adagio": {
                     "type": "http",
-                    "url": "https://mcp.adagio.run/mcp",
+                    "url": "https://mcp.adagio.run",
                     "oauth_resource": "https://mcp.adagio.run",
                 }
             }
@@ -166,6 +189,8 @@ def validate_package_files(plugin_root: Path) -> None:
             f"unexpected package file type: {path}",
         )
         require(not (path.stat().st_mode & stat.S_IXUSR), f"executable package file is not allowed: {path}")
+        if path.suffix in BINARY_SUFFIXES:
+            continue
         text = path.read_text(encoding="utf-8")
         require("[TODO:" not in text, f"unresolved TODO placeholder in {path}")
         require("replace_after" not in text.lower(), f"publication placeholder in {path}")

@@ -6,7 +6,7 @@ The skills and guardrails are shared across clients. Change them once here; do n
 
 Codex and Claude Code both use the adjacent `.mcp.json` connection. It declares the hosted endpoint and OAuth resource so each client owns its authorization flow. The registered Adagio OpenAI app belongs to the separately reviewed official listing and is deliberately not mapped by this GitHub fallback package. The MCP descriptor contains no credentials.
 
-For installation, authorization, privacy, revocation, and troubleshooting, see <https://docs.adagiodata.com/integrations/adagio-ai>.
+For installation, authorization, privacy, revocation, and troubleshooting, see <https://docs.adagio.run/integrations/adagio-ai>.
 
 ## Connect your account
 

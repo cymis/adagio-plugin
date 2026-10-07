@@ -6,7 +6,7 @@
     "name": "Adagio",
     "url": "https://adagio.run"
   },
-  "homepage": "https://docs.adagiodata.com/integrations/adagio-ai",
+  "homepage": "https://docs.adagio.run/integrations/adagio-ai",
   "repository": "https://github.com/cymis/adagio-plugin",
   "license": "MIT",
   "icon": "./assets/adagio-icon.png",

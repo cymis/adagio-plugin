@@ -51,7 +51,7 @@ The plugin can:
 
 It cannot execute pipelines, read local files, inspect local run outputs, control Adagio Desktop, or access raw biological artifacts. Local execution remains in Adagio Desktop.
 
-The installed package contains declarative skills, image assets, metadata, and one direct hosted MCP descriptor shared by Codex and Claude Code. It does not contain or install the registered OpenAI app mapping used by the separately reviewed official listing, and it contains no credentials, executable hooks, package dependencies, or local server. See the [Adagio AI integration guide](https://docs.adagiodata.com/integrations/adagio-ai/) for permissions, data boundaries, revocation, and troubleshooting.
+The installed package contains declarative skills, image assets, metadata, and one direct hosted MCP descriptor shared by Codex and Claude Code. It does not contain or install the registered OpenAI app mapping used by the separately reviewed official listing, and it contains no credentials, executable hooks, package dependencies, or local server. See the [Adagio AI integration guide](https://docs.adagio.run/integrations/adagio-ai/) for permissions, data boundaries, revocation, and troubleshooting.
 
 ## Update
 
@@ -78,7 +78,7 @@ Start a new task after reinstalling so the client loads the updated skills and t
 
 Remove the GitHub plugin and its marketplace before installing the corresponding official listing. This avoids duplicate skills and tool connections. Removing a plugin does not revoke its Adagio authorization; revoke the connection under **Adagio → Settings → AI → AI assistants**.
 
-Reviewed-directory installation links will be published in the [integration guide](https://docs.adagiodata.com/integrations/adagio-ai/) after each vendor approves and publishes its listing.
+Reviewed-directory installation links will be published in the [integration guide](https://docs.adagio.run/integrations/adagio-ai/) after each vendor approves and publishes its listing.
 
 ## Support and security
 

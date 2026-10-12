@@ -11,6 +11,6 @@
 
 Before release, confirm the direct hosted MCP connection independently on Codex and Claude Code, current vendor requirements, and the frozen hosted build. The registered OpenAI app is validated in its separate official review track. Then run repository and plugin validation and exercise the positive and negative reviewer cases.
 
-Release ordering is strict: deploy and verify `https://docs.adagiodata.com/integrations/adagio-ai` first, then build or publish any plugin package or Desktop release that references it. Do not publish a listing until its final URL is known and the package has been updated and revalidated.
+Release ordering is strict: deploy and verify `https://docs.adagio.run/integrations/adagio-ai` first, then build or publish any plugin package or Desktop release that references it. Do not publish a listing until its final URL is known and the package has been updated and revalidated.
 
 Keep both committed manifest versions and the Claude marketplace metadata version equal to the package version above. The GitHub release tag must be `v<package-version>` and must point at the exact commit that passed acceptance tests on both clients.

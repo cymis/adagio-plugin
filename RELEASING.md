@@ -32,7 +32,7 @@ Submit the MCP server separately from the existing `plugins/adagio` bundle in
 | Connection | Universal URL: `https://mcp.adagio.run` |
 | Authentication | OAuth with dynamic client registration (`oauth_dcr`) |
 | Sign-in | Required before tools can run; no static request headers |
-| Documentation | `https://docs.adagiodata.com/integrations/adagio-ai/` |
+| Documentation | `https://docs.adagio.run/integrations/adagio-ai/` |
 | Privacy policy | `https://adagio.run/privacy` |
 | Product and support | `https://adagio.run` and `https://adagio.run/contact` |
 | Capabilities | Reads and writes pipeline definitions and plugin-library metadata; no pipeline execution or local-file access |

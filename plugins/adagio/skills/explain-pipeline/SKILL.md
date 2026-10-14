@@ -13,7 +13,7 @@ Use this workflow for summaries, reviews, audits, and questions about an existin
 2. If the user supplied a name instead of a UUID, use `list_pipelines`; names are not unique, so ask the user to choose when matches are ambiguous.
 3. Call `get_pipeline` using the verified pipeline ID.
 4. Fetch exact action specifications with `get_action_specs` when an explanation depends on parameter semantics. Use `find_compatible_actions` only for factual alternatives or connection checks.
-5. Explain the flow from inputs through outputs, then identify unresolved data, parameters, validation problems, and consequential scientific choices.
+5. Explain the flow from inputs through outputs, then identify unresolved data, parameters, validation problems, and consequential scientific choices. Describe the pipeline's variables as what someone running it can set: name each, what it feeds, and its default if it has one. Parameters that read no variable are fixed as configured. If asked about promotion, say it is deprecated and replaced by variables.
 6. Distinguish facts returned by Adagio from scientific interpretation. Do not infer data characteristics from pipeline or step names.
 7. Return the canonical `Open in Adagio` URL.
 

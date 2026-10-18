@@ -5,7 +5,7 @@
       <stop offset="1" stop-color="#1a414c"/>
     </linearGradient>
   </defs>
-  <rect x="0" y="0" width="1024" height="1024" rx="228" ry="228" fill="url(#bg)"/>
+  <rect x="0" y="0" width="1024" height="1024" fill="url(#bg)"/>
   <g transform="translate(197.75, 212) scale(14.29)">
     <g transform="translate(-72.117 -137.71)">
       <path fill="none" stroke="#ffffff" stroke-linecap="round" stroke-linejoin="round" style="stroke-width: 5" d="m94.611 184.3a21.805 21.734 0 0 1 -18.206 -14.794 21.805 21.734 0 0 1 5.829 -22.681 21.805 21.734 0 0 1 23.1 -4.2471"/>

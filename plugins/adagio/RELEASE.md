@@ -1,6 +1,6 @@
 # Release metadata
 
-- Package version: 0.1.2
+- Package version: 0.1.3
 - Distribution: `cymis/adagio-plugin`, marketplace `adagio`
 - Pipeline specification: 1.0.0rc
 - Hosted MCP resource: `https://mcp.adagio.run`

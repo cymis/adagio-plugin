@@ -16,12 +16,12 @@ The public bundle lives under [`plugins/adagio`](plugins/adagio). Edit the share
 
 ## Install a released GitHub build
 
-You need an Adagio account and a client with plugin marketplace support. The `v0.1.2` tag will be published only after cross-client release validation passes. Until that tag exists, these commands intentionally do not install a moving release candidate.
+You need an Adagio account and a client with plugin marketplace support. The `v0.1.3` tag will be published only after cross-client release validation passes. Until that tag exists, these commands intentionally do not install a moving release candidate.
 
 ### Claude Code
 
 ```text
-/plugin marketplace add cymis/adagio-plugin@v0.1.2
+/plugin marketplace add cymis/adagio-plugin@v0.1.3
 /plugin install adagio@adagio
 /reload-plugins
 ```
@@ -31,7 +31,7 @@ Starting a new Claude Code session also loads the installed plugin. Connect your
 ### Codex
 
 ```bash
-codex plugin marketplace add cymis/adagio-plugin --ref v0.1.2
+codex plugin marketplace add cymis/adagio-plugin --ref v0.1.3
 codex plugin add adagio@adagio
 ```
 
